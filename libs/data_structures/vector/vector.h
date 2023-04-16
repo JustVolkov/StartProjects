@@ -54,3 +54,13 @@ void test_pushBack();
 void popBack(vector* v);
 
 void test_popBack();
+
+//
+
+int* front(vector* v);
+
+void test_front();
+
+int* back(vector* v);
+
+void test_back();

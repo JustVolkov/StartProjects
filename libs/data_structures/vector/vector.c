@@ -225,3 +225,49 @@ void test_popBack() {
         assert((v.size == 0) && (v.data[0] == NULL));
     }
     free(v.data);
+
+    // #14.14
+
+    // Возвращает первый элемент вектора v.
+    int* front(vector* v) {
+        if (v->size == 0) {
+            fprintf(stderr, "vector is empty");
+            exit(1);
+        }
+        return &(v->data[0]);
+    }
+
+    void test_front() {
+        vector v_oneElement = createVector(1);
+        v_oneElement.data[0] = 66;
+        assert(*(front(&v_oneElement)) == 66);
+
+        vector v_ordinary = createVector(3);
+        v_ordinary.data[0] = 7;
+        assert(*(front(&v_ordinary)) == 7);
+
+        free(v_oneElement.data);
+        free(v_ordinary.data);
+    }
+
+// Возвращает последний элемент вектора v.
+    int* back(vector* v) {
+        if (v->size == 0) {
+            fprintf(stderr, "vector is empty");
+            exit(1);
+        }
+        return &(v->data[v->size - 1]);
+    }
+
+    void test_back() {
+        vector v_oneElement = createVector(1);
+        v_oneElement.data[0] = 66;
+        assert(*(back(&v_oneElement)) == 66);
+
+        vector v_ordinary = createVector(3);
+        v_ordinary.data[2] = 9;
+        assert(*(back(&v_ordinary)) == 9);
+
+        free(v_oneElement.data);
+        free(v_ordinary.data);
+    }
