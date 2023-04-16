@@ -50,3 +50,7 @@ void test_getVectorValue();
 void pushBack(vector* v, int x);
 
 void test_pushBack();
+
+void popBack(vector* v);
+
+void test_popBack();

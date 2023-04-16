@@ -177,3 +177,51 @@ void test_pushBack() {
     }
     free(v.data);
 }
+
+// #14.13
+
+// Удаляет значение последнего элемента вектора v.
+void popBack(vector* v) {
+    if (v->size > 0) {
+        v->data[v->size - 1] = NULL;
+        v->size--;		//		669
+    }
+    if (v->size == 0) {
+        fprintf(stderr, "vector is empty");
+        exit(1);
+    }
+}
+
+void test_popBack() {
+    vector v = createVector(5);
+    // 4 5 7 81 3
+    {
+        v.data[0] = 4;
+        v.data[1] = 5;
+        v.data[2] = 7;
+        v.data[3] = 81;
+        v.data[4] = 3;
+    }
+    int prev_size = v.size;
+
+    {
+        popBack(&v);
+        assert((v.size == 4) && (v.data[4] == NULL));
+
+        popBack(&v);
+        assert((v.size == 3) && (v.data[3] == NULL));
+
+        popBack(&v);
+        assert((v.size == 2) && (v.data[2] == NULL));
+
+        popBack(&v);
+        assert((v.size == 1) && (v.data[1] == NULL));
+
+        popBack(&v);
+        assert((v.size == 0) && (v.data[0] == NULL));
+
+        // Последний вызов функции popBack(...) - ожидается вывод ошибки о том, что вектор пуст.
+        popBack(&v);
+        assert((v.size == 0) && (v.data[0] == NULL));
+    }
+    free(v.data);
