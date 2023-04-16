@@ -64,3 +64,14 @@ void clear(vector* v) {
 
     v->size = 0;
 }
+
+// #14.7
+
+// Освобождает память, выделенную под неиспользуемые элементы.
+void shrinkToFit(vector* v) {
+    for (int i = 0; i < v->capacity; i++) {
+        v->data[i] = NULL;
+    }
+    v->capacity = v->size;
+    // "Удаляет неиспользуемые элементы ("запас", т. е. capacity, приравнивается к size).
+}
