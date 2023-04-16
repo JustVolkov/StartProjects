@@ -117,3 +117,27 @@ void test_isFull() {
     free(v_notFull.data);
     free(v_Full.data);
 }
+
+// #14.11
+
+// Возвращает i-ый элемент вектора v.
+int getVectorValue(vector* v, size_t i) {
+    return v->data[i];
+}
+
+void test_getVectorValue() {
+    vector v = createVector(4);
+    {
+        v.data[0] = 2;
+        v.data[1] = 4;
+        v.data[2] = 8;
+        v.data[3] = 16;
+    }
+    {
+        assert(getVectorValue(&v, 0) == 2);
+        assert(getVectorValue(&v, 1) == 4);
+        assert(getVectorValue(&v, 2) == 8);
+        assert(getVectorValue(&v, 3) == 16);
+    }
+    free(v.data);
+}

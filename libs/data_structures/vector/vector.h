@@ -38,3 +38,9 @@ void test_isEmpty();
 bool isFull(vector* v);
 
 void test_isFull();
+
+//---
+
+int getVectorValue(vector* v, size_t i);
+
+void test_getVectorValue();
