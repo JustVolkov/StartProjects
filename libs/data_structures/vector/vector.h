@@ -70,3 +70,7 @@ void test_back();
 int* atVector(vector* v, size_t index);
 
 void test_atVector();
+
+//---
+
+void vector_test();

@@ -301,3 +301,18 @@ void test_popBack() {
         }
         free(v.data);
     }
+
+    // #14.16
+
+    void vector_test() {
+        test_reserve();
+        test_isEmpty();
+        test_isFull();
+        test_getVectorValue();
+        test_pushBack();
+        test_popBack();		// При попытке использования с "пустым" вектором
+                            // эта функция произведёт вывод ошибки.
+        test_front();
+        test_back();
+        test_atVector();
+    }
