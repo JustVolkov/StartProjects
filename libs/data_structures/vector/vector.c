@@ -75,3 +75,11 @@ void shrinkToFit(vector* v) {
     v->capacity = v->size;
     // "Удаляет неиспользуемые элементы ("запас", т. е. capacity, приравнивается к size).
 }
+
+// #14.8
+
+// Освобождает память, выделенную вектору.
+void deleteVector(vector* v) {
+    v->data = realloc(v->data, v->size);
+    v->capacity = v->size;
+}
