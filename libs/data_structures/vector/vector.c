@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+#include <assert.h>
+#include <stdint.h>		// Для MAX_SIZE
+#include <stddef.h>		// Для NULL
 
 #include "T:\CLionProjects\StartProjects\libs\data_structures\vector\vector.h"
 
@@ -36,4 +39,17 @@ void reserve(vector* v, size_t newCapacity) {
         if (newCapacity < v->size)
             v->size = newCapacity;
     }
+}
+
+// #14.5
+
+void test_reserve() {
+    vector v_notEmpty = createVector(4);
+    vector v_Empty = createVector(0);
+
+    assert((v_notEmpty.size == 4) && (v_notEmpty.capacity == 4));
+    assert((v_Empty.size == 0) && (v_Empty.capacity == 0));
+
+    free(v_Empty.data);
+    free(v_notEmpty.data);
 }

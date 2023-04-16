@@ -15,4 +15,10 @@ typedef struct vector {
 
 vector createVector(size_t  capacity);
 
+//---
+
 void reserve(vector* v, size_t newCapacity);
+
+void test_reserve();
+
+//---
