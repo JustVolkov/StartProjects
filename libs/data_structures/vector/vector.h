@@ -34,3 +34,7 @@ void deleteVector(vector* v);
 bool isEmpty(vector* v);
 
 void test_isEmpty();
+
+bool isFull(vector* v);
+
+void test_isFull();

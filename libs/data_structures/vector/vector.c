@@ -100,3 +100,20 @@ void test_isEmpty() {
     free(v_Empty.data);
     free(v_notEmpty.data);
 }
+
+// #14.10
+
+// Является ли вектор "полным"?
+bool isFull(vector* v) {
+    return v->size == v->capacity;
+}
+
+void test_isFull() {
+    vector v_notFull = createVector(3);
+    v_notFull.capacity++;
+    vector v_Full = createVector(3);
+    assert((isFull(&v_Full) == true) && (isFull(&v_notFull) == false));
+
+    free(v_notFull.data);
+    free(v_Full.data);
+}
