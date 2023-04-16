@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <stdint.h>		// Для MAX_SIZE
 #include <stddef.h>		// Для NULL
+#include <stdbool.h>
 
 #include "T:\CLionProjects\StartProjects\libs\data_structures\vector\vector.h"
 
@@ -82,4 +83,20 @@ void shrinkToFit(vector* v) {
 void deleteVector(vector* v) {
     v->data = realloc(v->data, v->size);
     v->capacity = v->size;
+}
+
+// #14.9
+
+// Является ли вектор "пустым"?
+bool isEmpty(vector* v) {
+    return v->size == 0;
+}
+
+void test_isEmpty() {
+    vector v_notEmpty = createVector(3);
+    vector v_Empty = createVector(0);
+    assert((isEmpty(&v_notEmpty) == false) && (isEmpty(&v_Empty) == true));
+
+    free(v_Empty.data);
+    free(v_notEmpty.data);
 }
