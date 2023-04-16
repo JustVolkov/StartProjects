@@ -1,7 +1,8 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
 
-#include "libs/data_structures/vector/vector.h"
+#include "T:\CLionProjects\StartProjects\libs\data_structures\vector\vector.h"
 
 // #14.2
 
