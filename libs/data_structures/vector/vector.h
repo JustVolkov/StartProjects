@@ -10,3 +10,7 @@ typedef struct vector {
     size_t size; // размер вектора
     size_t capacity; // вместимость вектора
 } vector;
+
+//---
+
+vector createVector(size_t  capacity);
