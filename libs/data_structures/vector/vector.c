@@ -17,3 +17,21 @@ vector createVector(size_t  capacity) {
 
     return v;
 }
+
+// Изменяет количество памяти, выделенное под хранение элементов вектора
+void reserve(vector* v, size_t newCapacity) {
+    v->capacity = newCapacity;
+
+    if (newCapacity == 0)
+        v->data = NULL;
+    else {
+        v->data = realloc(v->data, sizeof(int) * newCapacity);
+
+        if (!(v->data)) {
+            fprintf(stderr, "bad alloc");
+            exit(1);
+        }
+        if (newCapacity < v->size)
+            v->size = newCapacity;
+    }
+}
