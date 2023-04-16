@@ -141,3 +141,39 @@ void test_getVectorValue() {
     }
     free(v.data);
 }
+
+// #14.12
+
+// Добавляет элемент x в конец вектора
+// (при необходимости capacity увеличивается по спец. правилам).
+void pushBack(vector* v, int x) {
+    if (v->capacity == 0)
+        reserve(v, 1);
+    else if (v->size == v->capacity)
+        reserve(v, (v->capacity * 2));
+    v->data[v->size] = x;
+    v->size++;
+}
+
+void test_pushBack() {
+    vector v = createVector(0);
+    assert((v.capacity == 0) && (v.size == 0));
+
+    {
+        pushBack(&v, 66);
+        assert((v.capacity == 1) && (v.size == 1) && (v.data[0] == 66));
+
+        pushBack(&v, 24);
+        assert((v.capacity == 2) && (v.size == 2) && (v.data[1] == 24));
+
+        pushBack(&v, 12);
+        assert((v.capacity == 4) && (v.size == 3) && (v.data[2] == 12));
+
+        pushBack(&v, 3);
+        assert((v.capacity == 4) && (v.size == 4) && (v.data[3] == 3));
+
+        pushBack(&v, 1);
+        assert((v.capacity == 8) && (v.size == 5) && (v.data[4] == 1));
+    }
+    free(v.data);
+}

@@ -44,3 +44,9 @@ void test_isFull();
 int getVectorValue(vector* v, size_t i);
 
 void test_getVectorValue();
+
+//---
+
+void pushBack(vector* v, int x);
+
+void test_pushBack();
