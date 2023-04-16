@@ -22,3 +22,5 @@ void reserve(vector* v, size_t newCapacity);
 void test_reserve();
 
 //---
+
+void clear(vector* v);

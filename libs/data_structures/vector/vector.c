@@ -53,3 +53,14 @@ void test_reserve() {
     free(v_Empty.data);
     free(v_notEmpty.data);
 }
+
+// #14.6
+
+// Удаляет элементы из контейнера, но не освобождает выделенную память
+void clear(vector* v) {
+    for (int i = 0; i < v->size; i++) {
+        v->data[i] = NULL;
+    }
+
+    v->size = 0;
+}
