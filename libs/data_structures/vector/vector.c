@@ -18,6 +18,8 @@ vector createVector(size_t  capacity) {
     return v;
 }
 
+// #14.4
+
 // Изменяет количество памяти, выделенное под хранение элементов вектора
 void reserve(vector* v, size_t newCapacity) {
     v->capacity = newCapacity;

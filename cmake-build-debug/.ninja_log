@@ -1,0 +1,7 @@
+# ninja log v5
+1	863	7033110454047595	CMakeFiles/StartProjects.dir/main.c.obj	23c0257c88dde869
+61	307	7033110802421440	CMakeFiles/StartProjects.dir/main.c.obj	23c0257c88dde869
+4	158	7033110889312928	CMakeFiles/StartProjects.dir/main.c.obj	23c0257c88dde869
+4	144	7033111094075417	CMakeFiles/StartProjects.dir/main.c.obj	23c0257c88dde869
+4	225	7033111266817619	CMakeFiles/StartProjects.dir/libs/data_structures/vector/vector.c.obj	c3d2d1feab32e165
+226	1215	7033111276678183	StartProjects.exe	731933195840e362
