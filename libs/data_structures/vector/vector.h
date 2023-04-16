@@ -64,3 +64,9 @@ void test_front();
 int* back(vector* v);
 
 void test_back();
+
+//---
+
+int* atVector(vector* v, size_t index);
+
+void test_atVector();

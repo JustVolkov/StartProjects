@@ -271,3 +271,33 @@ void test_popBack() {
         free(v_oneElement.data);
         free(v_ordinary.data);
     }
+
+    // #14.15
+
+    // Возвращает указатель на элемент с индексом index.
+// Если index больше, чем размер используемой части вектора, выводится ошибка.
+    int* atVector(vector* v, size_t index) {
+        if (index >= v->size) {
+            fprintf(stderr, "IndexError: a[%d] is not exists", index);
+            exit(1);
+        }
+        return &(v->data[index]);;
+    }
+
+    void test_atVector() {
+        vector v = createVector(4);
+        {
+            v.data[0] = 34;
+            v.data[1] = 41;
+            v.data[2] = 49;
+            v.data[3] = 11;
+        }
+
+        {
+            assert(*atVector(&v, 0) == 34);
+            assert(*atVector(&v, 0) == 41);
+            assert(*atVector(&v, 0) == 49);
+            assert(*atVector(&v, 0) == 11);
+        }
+        free(v.data);
+    }
